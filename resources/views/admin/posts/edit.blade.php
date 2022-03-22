@@ -12,6 +12,9 @@
                 placeholder="Titolo del post"
                 value="{{ old('title') ?? $post->title }}"
                 >
+                @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror                
             </div>
             <div class="form-group">
                 <textarea class="form-control" id="content" 

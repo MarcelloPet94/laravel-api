@@ -12,22 +12,31 @@
                 <textarea class="form-control" id="content" name="content"
                     placeholder="Descrizione del prodotto"></textarea>
             </div>
+
+            <select name="category_id" class="form-control">
+                <option value=""> -- </option>
+                @foreach ($categories as $option)
+                    <option value="{{ $option->id }}"> {{ $option->name }} </option>
+                @endforeach
+            </select>              
+
+            <div class="form-group mt-3">
+
+                @foreach ($tags as $tag)
+                <div class="form-check">                   
+                    <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->slug}}" name="tags[]">
+                    <label class="form-check-label" for="{{$tag->slug}}">
+                        {{$tag->name}}
+                    </label>
+                </div>    
+                @endforeach   
+                
+            </div>
+
             <div class="space_btn_area">
                  <a href="{{ route('admin.posts.index')}}" class="btnStyl goback">Go back</a>
                 <button type="submit" class="btn_funct save_edit_btn">Edit</button>
             </div>  
-
-            @foreach ($tags as $tag)
-                
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->slug}}" name="tags[]">
-            <label class="form-check-label" for="{{$tag->slug}}">
-                {{$tag->name}}
-            </label>
-            </div>
-
-            @endforeach   
-
         </form>
 
         @if ($errors->any())

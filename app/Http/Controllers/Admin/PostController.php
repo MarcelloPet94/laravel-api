@@ -39,8 +39,9 @@ class PostController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
         $tags = Tag::all();
-        return view('admin.posts.create', compact('tags'));
+        return view('admin.posts.create', compact('tags','categories'));
     }
 
     /**
@@ -54,7 +55,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|exists:tags,id'            
         ]);
 
         $data = $request->all();
@@ -65,7 +67,7 @@ class PostController extends Controller
         $newPost->fill($data);
         $newPost->save();
 
-        $newPost->tags()->sync($data['tags']);
+        $newPost->tags()->sync(isset($data['tags']) ? $data['tags'] : [] );
         return redirect()->route('admin.posts.index', $newPost->id);
     }
 
@@ -104,7 +106,9 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|exists:tags,id'  
         ]);
 
         $data = $request->all();
