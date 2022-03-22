@@ -26,6 +26,24 @@
                 @endforeach
             </select>  
 
+            <div class="form-group mt-3">
+                
+                
+                @foreach ($tags as $tag)
+                    
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="tags[]" value="{{$tag->id}}" {{$post->tags->contains($tag) ? 'checked' : ''}}>
+                    <label for="{{$tag->slug}}">{{$tag->name}}</label>
+                </div>
+                
+                @endforeach
+                
+                @error('tags[]')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            
+            </div>          
+
             <div class="space_btn_area">
                 <a href="{{ route('admin.posts.index')}}" class="btnStyl goback">Go back</a>                
                 <button type="submit" class="btn_funct save_edit_btn">Edit</button>

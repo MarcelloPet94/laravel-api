@@ -89,7 +89,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('admin.posts.edit', compact('post', 'categories','tags'));
     }
 
     /**
@@ -109,6 +110,8 @@ class PostController extends Controller
         $data = $request->all();
         $data["slug"] = ($post->title == $data['title']) ? $post->slug : $this->slug($data["title"], $post->id);
         $post->update($data);
+        $post->tags()->sync(isset($data['tags']) ? $data['tags'] : [] );
+
         return redirect()->route('admin.posts.index');
     }
 

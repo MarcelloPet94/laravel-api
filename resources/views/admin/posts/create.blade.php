@@ -19,12 +19,12 @@
 
             @foreach ($tags as $tag)
                 
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->slug}}" name="tags[]">
-                <label class="form-check-label" for="{{$tag->slug}}">
-                    {{$tag->name}}
-                </label>
-                </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="{{$tag->id}}" id="{{$tag->slug}}" name="tags[]">
+            <label class="form-check-label" for="{{$tag->slug}}">
+                {{$tag->name}}
+            </label>
+            </div>
 
             @endforeach   
 
