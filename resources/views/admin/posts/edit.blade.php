@@ -47,6 +47,10 @@
             
             </div>          
 
+            <div class="form-group">
+                <input type="file" name="image" class="form-control">
+            </div>
+
             <div class="space_btn_area">
                 <a href="{{ route('admin.posts.index')}}" class="btnStyl goback">Go back</a>                
                 <button type="submit" class="btn_funct save_edit_btn">Edit</button>

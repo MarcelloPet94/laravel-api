@@ -67,6 +67,22 @@
 
 .col img {width: 100%;}
 
+.media_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    min-height: 200px;
+    background-color:lightblue;
+}
+
+.media_container h3
+{
+    text-align: center;
+}
+
 .col span
 {
     font-weight: 800;

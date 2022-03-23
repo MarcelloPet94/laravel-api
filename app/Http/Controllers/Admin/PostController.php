@@ -116,10 +116,18 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'tags' => 'nullable|exists:tags,id'  
-        ]);
+            'tags' => 'nullable|exists:tags,id',  
+            'image' => 'nullable'      
+        ]);      
 
         $data = $request->all();
+        
+        if(isset($data['image']))
+        {
+            $img_path = Storage::put("uploads", $data['image']);
+            $data['image'] = $img_path;
+        }  
+
         $data["slug"] = ($post->title == $data['title']) ? $post->slug : $this->slug($data["title"], $post->id);
         $post->update($data);
         $post->tags()->sync(isset($data['tags']) ? $data['tags'] : [] );

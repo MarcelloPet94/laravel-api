@@ -8,13 +8,16 @@
 
         @foreach ($posts as $post)
             <div class="row mb-5">
-                <div class="col">
-                    <img src="{{asset('storage/'.$post->image)}}">
+                <div class="col media_container">
+                    @if ($post->image == null)
+                    <h3>Immagina un'immagine</h3> 
+                    @else
+                    <img src='{{asset("storage/".$post->image)}}'>
+                    @endif
                 </div> 
     
                 <div class="col">
                     <ul>
-                        <li><span>Id:</span>{{$post->id}}</li>
                         <li><span>Title:</span>{{$post->title}}</li>
                         <li><span>Content:</span>{{$post->content}}</li>
                         <li><span>Slug:</span>{{$post->slug}}</li>
