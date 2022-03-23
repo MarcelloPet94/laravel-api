@@ -3,6 +3,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+function test()
+{
+    console.log("ciao");
+}
+
 
 require('./bootstrap');
 

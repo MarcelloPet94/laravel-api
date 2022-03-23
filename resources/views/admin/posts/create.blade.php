@@ -2,7 +2,7 @@
 @include('layouts.admin')
     <div class="container">
     <h1>Crea un nuovo post</h1>
-        <form action="{{ route('admin.posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -33,9 +33,13 @@
                 
             </div>
 
+            <div class="form-group">
+                <input type="file" name="image" class="form-control">
+            </div>            
+
             <div class="space_btn_area">
                  <a href="{{ route('admin.posts.index')}}" class="btnStyl goback">Go back</a>
-                <button type="submit" class="btn_funct save_edit_btn">Edit</button>
+                <button type="submit" class="btn_funct save_edit_btn">Create</button>
             </div>  
         </form>
 

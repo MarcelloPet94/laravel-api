@@ -1,9 +1,14 @@
 .space_btn_area
 {
     display: flex;
+}
+
+.align_between
+{
+    padding: 32px 0 32px;
+    margin-bottom: 32px;
     justify-content: space-between;
-    align-items: center;
-    padding: 32px 0;
+    border-bottom: 1px solid lightgray;
 }
 
 .btnStyl
@@ -55,27 +60,15 @@
 
 }
 
-/*  */
-
-.ind
-{
-    border-top: 1px solid #010101;
-    border-bottom: 1px solid #010101;
+.container .row ul li 
+{    
+    list-style: none;
 }
 
-.ind ul li
+.col img {width: 100%;}
+
+.col span
 {
     font-weight: 800;
-}
-
-.container .riga ul
-{
-    display: flex;
-}
-
-.container .riga ul li 
-{    
-    width: 20%;
-    padding: 8px;
-    list-style: none;
+    margin-right: 8px;
 }

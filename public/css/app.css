@@ -10971,9 +10971,13 @@ a.text-dark:focus {
 
 .space_btn_area {
   display: flex;
+}
+
+.align_between {
+  padding: 32px 0 32px;
+  margin-bottom: 32px;
   justify-content: space-between;
-  align-items: center;
-  padding: 32px 0;
+  border-bottom: 1px solid lightgray;
 }
 
 .btnStyl {
@@ -11016,24 +11020,16 @@ a.text-dark:focus {
   border-bottom: 1px solid lightblue;
 }
 
-/*  */
-
-.ind {
-  border-top: 1px solid #010101;
-  border-bottom: 1px solid #010101;
-}
-
-.ind ul li {
-  font-weight: 800;
-}
-
-.container .riga ul {
-  display: flex;
-}
-
-.container .riga ul li {
-  width: 20%;
-  padding: 8px;
+.container .row ul li {
   list-style: none;
+}
+
+.col img {
+  width: 100%;
+}
+
+.col span {
+  font-weight: 800;
+  margin-right: 8px;
 }
 

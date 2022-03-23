@@ -1,35 +1,30 @@
 <div class="align_controller">
 @include('layouts.admin')
     <div class="container">
-        <div class="space_btn_area">
+        <div class="space_btn_area align_between">
             <h2>Lista dei post</h2>
             <a href="{{ route('admin.posts.create')}}" class="btnStyl goback">Create</a>
         </div>           
-        <div class="riga ind">
-            <ul>
-                <li>ID</li>
-                <li>Title</li>
-                <li>Contenuto</li>
-                <li>Slug</li>
-                <li>Categoria</li>
-                <li>Tags</li>
-                <li>Operation</li>
-            </ul>
-        </div>
+
         @foreach ($posts as $post)
-            <div class="riga">
-                <ul>
-                    <li>{{$post->id}}</li>
-                    <li>{{$post->title}}</li>
-                    <li>{{$post->content}}</li>
-                    <li>{{$post->slug}}</li>
-                    <li>{{$post->category ? $post->category->name : 'No category'}}</li>
-                    <li> 
-                        @foreach ($post->tags as $tag)
-                            {{ $tag->name }}
-                        @endforeach
-                    </li>
-                    <li>
+            <div class="row mb-5">
+                <div class="col">
+                    <img src="{{asset('storage/'.$post->image)}}">
+                </div> 
+    
+                <div class="col">
+                    <ul>
+                        <li><span>Id:</span>{{$post->id}}</li>
+                        <li><span>Title:</span>{{$post->title}}</li>
+                        <li><span>Content:</span>{{$post->content}}</li>
+                        <li><span>Slug:</span>{{$post->slug}}</li>
+                        <li><span>Category:</span>{{$post->category ? $post->category->name : 'No category'}}</li>
+                        <li><span>Tags:</span>
+                            @foreach ($post->tags as $tag)
+                                {{ $tag->name }}
+                            @endforeach
+                        </li>
+                    </ul>    
                     <div class="space_btn_area">
                         <a class="btn_funct goback" href="{{ route('admin.posts.show', $post->id) }}">Open</a>
                         <a class="btn_funct goback" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
@@ -40,8 +35,18 @@
                             <button type="submit" class="btn_funct delete_btn">x</button>
                         </form>
                     </div>    
-                    </li>
-                </ul>    
-            </div> 
-        @endforeach    
+                </div> 
+            </div>                
+        @endforeach  
+
     </div>        
+
+    {{--             <ul>
+                ID</li>
+                <li>Title</li>
+                <li>Contenuto</li>
+                <li>Slug</li>
+                <li>Categoria</li>
+                <li>Tags</li>
+                <li>Operation</li>
+            </ul> --}}
