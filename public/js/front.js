@@ -1953,7 +1953,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*[data-v-332fccf4] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n.bg_blog[data-v-332fccf4] {\n  background-color: #b1ccff;\n}\n.bg_blog .article_container[data-v-332fccf4] {\n  background-color: #fff;\n  margin: 0 auto;\n  width: 800px;\n  padding: 24px;\n}\n.bg_blog .article_container .article[data-v-332fccf4] {\n  padding: 24px 0;\n  border-bottom: 1px solid lightgray;\n}\n.bg_blog .media_cont img[data-v-332fccf4] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "*[data-v-332fccf4] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n.bg_blog[data-v-332fccf4] {\n  background-color: #b1ccff;\n}\n.bg_blog .article_container[data-v-332fccf4] {\n  background-color: #fff;\n  margin: 0 auto;\n  width: 800px;\n  padding: 24px;\n}\n.bg_blog .article_container .article[data-v-332fccf4] {\n  padding: 24px 0;\n  margin-bottom: 80px;\n  border-bottom: 1px solid lightgray;\n}\n.bg_blog .article_container .article h2[data-v-332fccf4] {\n  font-size: 42px;\n  line-height: 1.5em;\n}\n.bg_blog .media_cont[data-v-332fccf4] {\n  padding: 16px 0;\n}\n.bg_blog .media_cont img[data-v-332fccf4] {\n  width: 100%;\n}", ""]);
 
 // exports
 

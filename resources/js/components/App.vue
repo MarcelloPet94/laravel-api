@@ -41,6 +41,7 @@ export default{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 .bg_blog
@@ -57,12 +58,20 @@ export default{
         .article
         {
             padding: 24px 0;
+            margin-bottom: 80px;
             border-bottom: 1px solid lightgray;
+
+            h2
+            {
+                font-size: 42px;
+                line-height: 1.5em;
+            }
         }
     }
 
     .media_cont
     {
+        padding: 16px 0;
         img
         {
             width: 100%;
