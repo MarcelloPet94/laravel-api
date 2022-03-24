@@ -34,4 +34,5 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')->name('home');
         // gestisce le rotte per la CRUD da loggato
         Route::resource('/posts', 'PostController');
+
     });
