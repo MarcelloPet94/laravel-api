@@ -7,6 +7,11 @@
             <div class="media_cont"><img :src="'storage/' + article.image"></div>
             <div class="argument_cont">
                 <p>{{article.content}}</p>
+                <p>{{article.category.name}}</p>
+                <ul>
+                    <li v-for="(tag, index) in article.tags" :key="index" class="tags_pin">{{'#' + tag.name }}</li>
+                </ul>
+
             </div>    
         </div>              
     </div>
@@ -17,7 +22,7 @@
 
 export default{
 
-    name: "App",
+    name: "Main",
     data(){
         return{
             allArticle : []
@@ -77,5 +82,16 @@ export default{
             width: 100%;
         }
     }
+}
+
+
+ul li 
+{
+    list-style-type: none;
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 15px;    
 }
 </style>

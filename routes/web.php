@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // tutte le rotte di autenticazione
 Auth::routes();
@@ -36,3 +34,9 @@ Route::middleware('auth')
         Route::resource('/posts', 'PostController');
 
     });
+
+Route::get("{any?}", function() {
+    return view("front");
+})->where("any", ".*");  // dentro any può essere qualsiasi cosa
+
+// any? = potrebbe anche non esserci nulla

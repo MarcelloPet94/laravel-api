@@ -14,8 +14,10 @@ class PostController extends Controller
             "surname"=>"pettenuzzo",
         ]); */
 
-        $posts = Post::all();
+        /* $posts = Post::all(); */
+        $posts = Post::with("category","tags")->get(); 
         /* $posts = Post::where("category_id","!=",null)->get(); */
         return response()->json($posts);
     }
 }
+

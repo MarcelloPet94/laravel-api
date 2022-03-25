@@ -1923,6 +1923,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -1953,7 +1959,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "*[data-v-332fccf4] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n.bg_blog[data-v-332fccf4] {\n  background-color: #b1ccff;\n}\n.bg_blog .article_container[data-v-332fccf4] {\n  background-color: #fff;\n  margin: 0 auto;\n  width: 800px;\n  padding: 24px;\n}\n.bg_blog .article_container .article[data-v-332fccf4] {\n  padding: 24px 0;\n  margin-bottom: 80px;\n  border-bottom: 1px solid lightgray;\n}\n.bg_blog .article_container .article h2[data-v-332fccf4] {\n  font-size: 42px;\n  line-height: 1.5em;\n}\n.bg_blog .media_cont[data-v-332fccf4] {\n  padding: 16px 0;\n}\n.bg_blog .media_cont img[data-v-332fccf4] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "*[data-v-332fccf4] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: sans-serif;\n}\n.bg_blog[data-v-332fccf4] {\n  background-color: #b1ccff;\n}\n.bg_blog .article_container[data-v-332fccf4] {\n  background-color: #fff;\n  margin: 0 auto;\n  width: 800px;\n  padding: 24px;\n}\n.bg_blog .article_container .article[data-v-332fccf4] {\n  padding: 24px 0;\n  margin-bottom: 80px;\n  border-bottom: 1px solid lightgray;\n}\n.bg_blog .article_container .article h2[data-v-332fccf4] {\n  font-size: 42px;\n  line-height: 1.5em;\n}\n.bg_blog .media_cont[data-v-332fccf4] {\n  padding: 16px 0;\n}\n.bg_blog .media_cont img[data-v-332fccf4] {\n  width: 100%;\n}\nul li[data-v-332fccf4] {\n  list-style-type: none;\n  display: inline-block;\n  background-color: lightcoral;\n  padding: 8px;\n  margin: 2px;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -3083,6 +3089,18 @@ var render = function () {
           _vm._v(" "),
           _c("div", { staticClass: "argument_cont" }, [
             _c("p", [_vm._v(_vm._s(article.content))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(article.category.name))]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              _vm._l(article.tags, function (tag, index) {
+                return _c("li", { key: index, staticClass: "tags_pin" }, [
+                  _vm._v(_vm._s("#" + tag.name)),
+                ])
+              }),
+              0
+            ),
           ]),
         ])
       }),
